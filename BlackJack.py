@@ -60,7 +60,7 @@ def print_card(card_list):
     return return_str
 
 def check_blackjack(card_list):
-    return (card_list[0].num == 'A' and card_list[1].num == '10') or (card_list[1].num == 'A' and card_list[0].num == '10')
+    return (card_list[0].num == 'A' and card_list[1].num in ['10', 'J', 'Q', 'K']) or (card_list[1].num == 'A' and card_list[0].num in ['10', 'J', 'Q', 'K'])
 
 def count_point(card_list):
     point = 0
@@ -83,7 +83,7 @@ def count_point(card_list):
     return point
 
 def print_game():
-    print("{player1.name}'s Deck:\nPoints: {player1.point}\n")
+    print(f"{player1.name}'s Deck:\nPoints: {player1.point}\n")
     print(print_card(player1.card_list))
 
     print('\n')
